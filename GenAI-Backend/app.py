@@ -42,6 +42,7 @@ def generate():
     """
     # Parse the incoming JSON data into variables.
     data = request.json
+    print("data:", data)
     name = data.get("name", "")
     company = data.get("company", "")
     industry = data.get("industry", "")
@@ -55,6 +56,8 @@ def generate():
         name, company, industry, role, role_type, experiences, reason
     )
     response = model.generate_content(message)
+
+    print("response:", response.text)
 
     return {"text": response.text}
 
