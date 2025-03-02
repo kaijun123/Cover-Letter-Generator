@@ -1,12 +1,15 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import { Card, MuiDropDown } from "./Card";
-import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import { SelectChangeEvent } from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import { useEffect, useState } from 'react';
+import './App.css';
+import { MuiDropDown } from "./Card";
 import { jobIndustries, jobTypes } from './utils';
+// import 'dotenv/config'
 
 type formType = "name" | "company" | "industry" | "type" | "role" | "experiences" | "reason";
+
+// const PORT = process.env.PORT || 9000
 
 const defaultFormData = {
   name: "",
@@ -34,13 +37,14 @@ function App() {
   };
 
   const handleClear = () => {
-    console.log("clicked clear")
+    // console.log("clicked clear")
     setFormData(defaultFormData)
   }
 
   const handleSubmit = () => {
-    console.log("formData:", formData)
-    fetch("http://localhost:9000/generate", {
+    // console.log("formData:", formData)
+    // console.log(`http://localhost:${PORT}/generate`)
+    fetch(`http://localhost:9000/generate`, {
       method: "POST", headers: {
         "Content-Type": "application/json",
       },
