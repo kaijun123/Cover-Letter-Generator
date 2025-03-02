@@ -1,5 +1,5 @@
 *.docx
 __pycache__
 node_modules/*
-# */.env
+*/.env
 .DS_Store
