@@ -15,3 +15,6 @@
 - GenAI-Backend:
   - python>=3.11
 
+### References:
+- https://github.com/google-gemini/example-chat-app/tree/main
+- https://github.com/DomMinnich/Gemini
